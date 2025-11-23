@@ -17,7 +17,9 @@ Flags used:
 -O3 -fopenmp -std=c++98
 
 ⦁	"-O3" → Maximum optimization
+
 ⦁	"-fopenmp" → OpenMP support
+
 ⦁	"-std=c++98" → C++ standard
 
 ---
@@ -86,9 +88,13 @@ Matrix file in Matrix Market (.mtx) format
 Runtime parameters:
 
 ⦁"--threads" → number of OpenMP threads
+
 ⦁"--runs" → number of benchmark runs
+
 ⦁"--schedule" → scheduling type (`static`, `dynamic`, `guided`)
+
 ⦁"--chunk" → chunk size for OpenMP
+
 ⦁"--output" → CSV filename
 
 Output
@@ -102,14 +108,19 @@ Output
 ## 4\. Modifying Parameters
 
 ⦁	Matrix sizes: change the `MATRICES` variable in the PBS script or provide a different ".mtx" file
+
 ⦁	Number of threads / CPUs:** adjust `THREADS` variable in PBS script or use `--threads` in CLI
+
 ⦁	Chunk sizes & scheduling:** modify `CHUNK_LIST` and `SCHEDULINGS` arrays in PBS script or pass as CLI arguments
 
 Default values in code:
 
 ⦁	Threads: 1
+
 ⦁	Runs: 10
+
 ⦁	Schedule: static
+
 ⦁	Chunk: 1
 
 - Adviced Chunk set for every matrix file
@@ -156,5 +167,7 @@ Default values in code:
 ⦁	Walltime: "#PBS -l walltime=02:00:00"
 
 ⦁	Output directory: make sure "$PBS_O_WORKDIR" is writable
+
 ⦁	File names: ensure unique CSV/output file names to prevent overwriting previous results
+
 ⦁ 	The PBS script loops through all scheduling/threads/chunks automatically.
