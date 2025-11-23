@@ -24,45 +24,45 @@ Flags used:
 
 ## 2\. How to Compile and Run
 
- Local
+Local
 
 2 possible ways:
 
 1. Run with .bat file:
 
-   Double click on the "run_spmv.bat"
+Double click on the "run_spmv.bat"
 
-   or
+or
 
 2. Run from terminal: 
 
-   "cd PathOfProject
+"cd PathOfProject
 
-   run_spmv.bat"
+"run_spmv.bat"
 
-   (To modify parameters open the "run_spmv.bat" with Block Notes or equivalent)
+(To modify parameters open the "run_spmv.bat" with Block Notes or equivalent)
 
- - Execute the file from terminal:
+- Execute the file from terminal:
 
-   "g++ -O3 -fopenmp -std=c++98 src/main.cpp src/csr.cpp src/spmv.cpp -o spmv.exe"
+"g++ -O3 -fopenmp -std=c++98 src/main.cpp src/csr.cpp src/spmv.cpp -o spmv.exe"
 
-    Pass from terminal the parameters you want to modify
+Pass from terminal the parameters you want to modify
 
-   "./spmv.exe matrices/large_matrix.mtx --threads 16 --runs 10 --schedule dynamic --chunk 1000 --output results.csv"
+"./spmv.exe matrices/large_matrix.mtx --threads 16 --runs 10 --schedule dynamic --chunk 1000 --output results.csv"
 
 (! It is mandatory for all local methods to modify the Scheduling type and the Chunk size from the source code, from the "main.cpp" file and the "spmv.h" file.)
 
- - Cluster
+- Cluster
 
 1. Submit PBS job:
 
-   "dos2unix run_cluster.pbs"
+"dos2unix run_cluster.pbs"
 
-   "qsub run_cluster.pbs"
+"qsub run_cluster.pbs"
  
-   The PBS script handles compilation, module loading, and looping through matrix files, thread counts, scheduling types, and chunk sizes.
+The PBS script handles compilation, module loading, and looping through matrix files, thread counts, scheduling types, and chunk sizes.
 
-   (You can modify the parameters from inside the "run_cluster.pbs" file with Block Notes or equivalent)
+(You can modify the parameters from inside the "run_cluster.pbs" file with Block Notes or equivalent)
 
 ---
 
@@ -70,7 +70,7 @@ Flags used:
 
 Input
 
- Matrix file in Matrix Market (.mtx) format
+Matrix file in Matrix Market (.mtx) format
 
  __________________________________________________________________________
 | Matrix file 		         | Matrix size (rows , columns, non-zero elements) |
@@ -95,7 +95,7 @@ Output
 
 ⦁CSV format with columns:
 
-  "Matrix,Threads,Schedule,Chunk,Runs,Avg(ms),Min(ms),Max(ms),90th(ms),Speedup"
+"Matrix,Threads,Schedule,Chunk,Runs,Avg(ms),Min(ms),Max(ms),90th(ms),Speedup"
 
 ---
 
@@ -148,9 +148,13 @@ Default values in code:
 ## 6\.  Cluster-specific Notes
 
 ⦁	Modules to load: "module load gcc75"
+
 ⦁	Queue: "short_cpuQ"
+
 ⦁	Resources: "#PBS -l select=1:ncpus=16:mem=4gb"
+
 ⦁	Walltime: "#PBS -l walltime=02:00:00"
+
 ⦁	Output directory: make sure "$PBS_O_WORKDIR" is writable
 ⦁	File names: ensure unique CSV/output file names to prevent overwriting previous results
 ⦁ 	The PBS script loops through all scheduling/threads/chunks automatically.
