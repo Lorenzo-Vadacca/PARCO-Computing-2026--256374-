@@ -72,10 +72,9 @@ Input
 
  Matrix file in Matrix Market (.mtx) format
 
- ____________________________________________________________
-| Matrix file 		         | Matrix size                       |
-|			                     |(rows , columns, non-zero elements)|
-|------------------------|-----------------------------------|
+ __________________________________________________________________________
+| Matrix file 		         | Matrix size (rows , columns, non-zero elements) |
+|------------------------|-------------------------------------------------|
 |small_matrix.mtx 	      | 5, 5, 9	       	                 
 |small_medium_matrix.mtx | 500, 500, 6700	                   
 |medium_matrix.mtx 	     | 10000, 10000, 200000              
