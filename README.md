@@ -73,19 +73,14 @@ Input
  Matrix file in Matrix Market (.mtx) format
 
  ____________________________________________________________
-| Matrix file 		       | Matrix size                       |
-|			                   |(rows , columns, non-zero elements)|
-|------------------------------------------------------------|
-|small_matrix.mtx 	     | 5, 5, 9	       	                 |
+| Matrix file 		         | Matrix size                       |
+|			                     |(rows , columns, non-zero elements)|
 |------------------------|-----------------------------------|
-|small_medium_matrix.mtx | 500, 500, 6700	                   |
-|------------------------|-----------------------------------|
-|medium_matrix.mtx 	     | 10000, 10000, 200000              |
-|------------------------|-----------------------------------|
-|medium_large_matrix.mtx | 50000, 50000, 1580000             |
-|------------------------|-----------------------------------|
-|large_matrix.mtx 	     | 100000, 100000, 2000000     	     |
-|------------------------|-----------------------------------|
+|small_matrix.mtx 	      | 5, 5, 9	       	                 
+|small_medium_matrix.mtx | 500, 500, 6700	                   
+|medium_matrix.mtx 	     | 10000, 10000, 200000              
+|medium_large_matrix.mtx | 50000, 50000, 1580000             
+|large_matrix.mtx 	      | 100000, 100000, 2000000     	     
  
 Runtime parameters:
 
@@ -118,9 +113,9 @@ Default values in code:
 
 - Adviced Chunk set for every matrix file
 
-_____________________________________________________
-|Matrices		            |Rows	  |Adviced chunk     		|
-|______________________|____________________________|
+______________________________________________________
+|Matrices		            |Rows	  |Adviced chunk     		  \
+|----------------------|-------------------------------|
 |small_matrix		        |5	     |1, 2, 5			              
 |small_medium_matrix	  |500	   |1, 10, 50, 100			        
 |medium_matrix		       |10000	 |10, 100, 1000			        
