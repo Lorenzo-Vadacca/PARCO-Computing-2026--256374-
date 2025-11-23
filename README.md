@@ -117,13 +117,13 @@ Default values in code:
 - Adviced Chunk set for every matrix file
 
 ______________________________________________________
-|Matrices		            |Rows	  |Adviced chunk     		  \
-|----------------------|-------------------------------|
-|small_matrix		        |5	     |1, 2, 5			              
-|small_medium_matrix	  |500	   |1, 10, 50, 100			        
-|medium_matrix		       |10000	 |10, 100, 1000			        
-|medium_large_matrix	  |50000	 |100, 1000, 5000		        
-|large_matrix		        |100000 |100, 1000, 5000, 10000    
+| Matrices		            | Rows	  | Adviced chunk   		  \
+|-----------------------|-------------------------------|
+| small_matrix		        | 5	     | 1, 2, 5			              
+| small_medium_matrix	  | 500	   | 1, 10, 50, 100			        
+| medium_matrix		       | 10000	 | 10, 100, 1000			        
+| medium_large_matrix	  | 50000	 | 100, 1000, 5000		        
+| large_matrix		        | 100000 | 100, 1000, 5000, 10000    
 
 
 ---
