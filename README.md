@@ -2,7 +2,7 @@ Sparse matrix SpMV Project (PARCO-D1)
 [made by Lorenzo Vadacca]
 
  ---
-(All the files are zipped for dimension problems. Please download.)
+(All the files are zipped for dimension problems. Please download "Vadacca-256374-ParcoD1.7z".)
 
 ## 1\. Compiler Version and Flags
 
