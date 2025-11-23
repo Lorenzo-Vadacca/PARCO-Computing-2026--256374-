@@ -118,44 +118,34 @@ Default values in code:
 
 - Adviced Chunk set for every matrix file
 
-____________________________________________________________
-|Matrices		            |Rows	|Adviced chunks            		|
-|_______________________|___________________________________|
-|small_matrix		        |5	    |1, 2, 5			              |
-|small_medium_matrix	  |500	  |1, 10, 50, 100			        |
-|medium_matrix		      |10000	|10, 100, 1000			        |
-|medium_large_matrix	  |50000	|100, 1000, 5000		        |
-|large_matrix		        |100000	|100, 1000, 5000, 10000     |
-\__________________________________________________________/
+_____________________________________________________
+|Matrices		            |Rows	  |Adviced chunk     		|
+|______________________|____________________________|
+|small_matrix		        |5	     |1, 2, 5			              
+|small_medium_matrix	  |500	   |1, 10, 50, 100			        
+|medium_matrix		       |10000	 |10, 100, 1000			        
+|medium_large_matrix	  |50000	 |100, 1000, 5000		        
+|large_matrix		        |100000 |100, 1000, 5000, 10000    
 
 
 ---
 
 ## 5\. Implemented functionalities:
 
-  ___________________________________________________________________________________________________________________________
- / Step 			                   | What it does in the code 				      	                                      			     \ 
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 1. Read matrix `.mtx` 	       | `loadMatrixFromMTX(filename)` read file, ignore comments `%`, read dimensions and triple   | 
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 2. Conversion in CSR     	     | Sort of triple by row/column, construction of  `row_ptr`, `col_idx` e `vals` 	            |
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 3. Generating casual vector    | `vector<double> x(A.cols)` with `rand()` e constant seed			 	                            |  
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 4. SpMV sequential 		         | `spmv_sequential(A, x)` calculate `y_seq` 						                                      | 				       
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 5. SpMV parallel (OpenMP) 	   | `spmv_parallel(A, x, num_threads)` calculate `y_par` 				                              | 	       
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 6. Time measurement 		       | `omp_get_wtime()` before and after every execution, loop for `runs` iteractions            |  
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 7. Time statistics     	       | Calculate average, min, max, 90° percentile  					                                    |
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 8. Verify correctness 	       | Calculate `max_diff` between `y_seq` and `y_par` 					                                |
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 9. Output first value 	       | Print first 10 elements of `y_par`    						                                          | 
-|--------------------------------|--------------------------------------------------------------------------------------------|
-| 10. Save results CSV           | Write of `results.csv` with all parameters and statistics     			                        |
- \---------------------------------------------------------------------------------------------------------------------------/
+  _____________________________________________________________________________________________________________________
+ / Step 			                    | What it does in the code 				      	                                   			            \ 
+|------------------------------|----------------------------------------------------------------------------------------|
+| 1. Read matrix `.mtx` 	      | `loadMatrixFromMTX(filename)` read file, ignore comments `%`, read dimensions and triple 
+| 2. Conversion in CSR         | Sort of triple by row/column, construction of  `row_ptr`, `col_idx` e `vals` 	            
+| 3. Generating casual vector  | `vector<double> x(A.cols)` with `rand()` e constant seed			 	                            
+| 4. SpMV sequential 		        | `spmv_sequential(A, x)` calculate `y_seq` 						                                     
+| 5. SpMV parallel (OpenMP) 	  | `spmv_parallel(A, x, num_threads)` calculate `y_par` 				                              
+| 6. Time measurement 		       | `omp_get_wtime()` before and after every execution, loop for `runs` iteractions            
+| 7. Time statistics     	     | Calculate average, min, max, 90° percentile  					                                    
+| 8. Verify correctness 	      | Calculate `max_diff` between `y_seq` and `y_par` 					                           
+| 9. Output first value 	      | Print first 10 elements of `y_par`    						                                          
+| 10. Save results CSV         | Write of `results.csv` with all parameters and statistics
+
 
 ---
 
