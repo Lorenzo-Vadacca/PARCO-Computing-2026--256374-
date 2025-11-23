@@ -82,7 +82,8 @@ Input
 |medium_large_matrix.mtx | 50000, 50000, 1580000             
 |large_matrix.mtx 	      | 100000, 100000, 2000000     	     
  
- ---
+
+---
 
 Runtime parameters:
 
@@ -123,6 +124,8 @@ ______________________________________________________
 |medium_matrix		       |10000	 |10, 100, 1000			        
 |medium_large_matrix	  |50000	 |100, 1000, 5000		        
 |large_matrix		        |100000 |100, 1000, 5000, 10000    
+
+
 ---
 
 ## 5\. Implemented functionalities:
