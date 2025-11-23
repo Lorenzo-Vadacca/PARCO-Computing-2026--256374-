@@ -123,7 +123,7 @@ Default values in code:
 
 ⦁	Chunk: 1
 
-- Adviced Chunk set for every matrix file
+ Adviced Chunk set for every matrix file
 
  ______________________________________________________
 | Matrices		            | Rows	  | Adviced chunk   		  \
@@ -135,7 +135,7 @@ Default values in code:
 | large_matrix		        | 100000 | 100, 1000, 5000, 10000    
 
 
----
+
 
 ## 5\. Implemented functionalities:
 
