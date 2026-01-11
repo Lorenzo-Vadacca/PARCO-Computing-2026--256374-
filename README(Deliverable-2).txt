@@ -73,17 +73,17 @@ Sparse matrices in Matrix Market (.mtx) format
 
 Matrices used in the experiments:
 
-Matrix file		    	Rows	Cols	NNZ
-small_matrix.mtx	    	10k     10k	200k
-small_medium_matrix.mtx 	14k	14k	400k
-medium_matrix.mtx	    	20k	20k	800k
-medium_large_matrix.mtx	    	28k	28k	1.6M
-2nd_small_matrix.mtx    	40k	40k	3.2M
-2nd_small_medium_matrix.mtx	57k	57k	6.4M
-2nd_medium_matrix.mtx		80k	80k	12.8M
-2nd_medium_large_matrix.mtx	116k	116k	20M
-large_matrix.mtx		130k	130k	25M
-strong_medium_large_matrix.mtx  50k	50k	1.58M
+Matrix file		    	        Rows	Cols	NNZ
+small_matrix.mtx	    	    10k     10k	    200k
+small_medium_matrix.mtx 	    14k	    14k	    400k
+medium_matrix.mtx	    		20k		20k		800k
+medium_large_matrix.mtx	    	28k		28k		1.6M
+2nd_small_matrix.mtx    		40k		40k		3.2M
+2nd_small_medium_matrix.mtx		57k		57k		6.4M
+2nd_medium_matrix.mtx			80k		80k		12.8M
+2nd_medium_large_matrix.mtx		116k	116k	20M
+large_matrix.mtx		    	130k	130k	25M
+strong_medium_large_matrix.mtx  50k		50k		1.58M
 strong_large_matrix.mtx	        100k	100k	25M
 
 Synthetic matrices were generated to support weak scaling up to 256 MPI processes.
@@ -188,5 +188,4 @@ Max tested scale: 256 MPI processes
 Synthetic matrices are used to reach large process counts.
 
 Results are reproducible due to fixed random seeds.
-
 The implementation prioritizes clarity and correctness over aggressive low-level optimizations.
