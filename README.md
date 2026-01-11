@@ -3,7 +3,7 @@ Sparse Matrix–Vector Multiplication with MPI (PARCO – Deliverable 2)[made by
 This project implements a distributed Sparse Matrix–Vector multiplication (SpMV) using the Compressed Sparse Row (CSR) format and MPI for parallelization.
 The work follows Foster’s methodology for parallel program design and includes strong and weak scaling experiments executed on an HPC cluster.
 
-1. Compiler, MPI Library, and Flags
+## 1\. Compiler, MPI Library, and Flags
 
 The project was developed and tested on an HPC cluster using:
 
@@ -23,7 +23,7 @@ Compilation flags:
 
 MPI compilation is handled via mpicxx or equivalent MPI wrappers.
 
-2. Project Structure
+## 2\. Project Structure
 
 Deliverable2/
 ├── matrices/      # Matrix Market (.mtx) input files
@@ -41,7 +41,7 @@ Deliverable2/
 │   └── run_spmv.pbs
 └── README.md
 
-3. How to Compile and Run
+## 3\. How to Compile and Run
 
 3.1 HPC Cluster (PBS)
 
@@ -65,7 +65,7 @@ The PBS script:
 
 All paths are resolved relative to the project root.
 
-4. Input and Output
+## 4\.Input and Output
 
 Input
 
@@ -102,7 +102,7 @@ The program prints:
 
 - Matrix,Processes,Rows,Cols,NNZ,Time(s),Speedup,Efficiency
 
-5. Implemented Functionality
+## 5\. Implemented Functionality
 
 Step	Description
 1	Rank 0 reads .mtx file
@@ -116,7 +116,7 @@ Step	Description
 9	Speedup and efficiency computation
 10	CSV output generation
 
-6. Parallel Design (Foster’s Methodology)
+## 6\. Parallel Design (Foster’s Methodology)
 
 The implementation follows Foster’s four steps:
 
@@ -132,7 +132,7 @@ Local CSR matrices built per rank to reduce communication.
 4)Mapping:
 MPI ranks mapped directly to compute processes.
 
-7. Scaling Experiments
+## 7\. Scaling Experiments
 
 - Strong Scaling
 
@@ -150,7 +150,7 @@ Constant workload per rank
 
 Goal: assess parallel efficiency at scale
 
-8. Performance Metrics
+## 8\. Performance Metrics
 
 The following metrics are reported:
 
@@ -168,7 +168,7 @@ Estimated FLOPs:
 
 2×𝑁𝑁𝑍
 
-9. Cluster Notes
+## 9\. Cluster Notes
 
 Modules required:
 
@@ -183,7 +183,7 @@ Walltime: configurable in PBS script
 
 Max tested scale: 256 MPI processes
 
-10. Notes
+## 10\. Notes
 
 Synthetic matrices are used to reach large process counts.
 
