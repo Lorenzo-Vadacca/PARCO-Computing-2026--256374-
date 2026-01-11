@@ -26,6 +26,8 @@ Compilation flags:
 
 MPI compilation is handled via mpicxx or equivalent MPI wrappers.
 
+---
+
 2. Project Structure
 
 Deliverable2/
@@ -43,6 +45,8 @@ Deliverable2/
 ├── scripts/       # PBS scripts for cluster execution
 │   └── run_spmv.pbs
 └── README.md
+
+---
 
 3. How to Compile and Run
 
@@ -66,25 +70,27 @@ The PBS script:
 
 All paths are resolved relative to the project root.
 
+---
+
 4. Input and Output
 
 Input: Sparse matrices in Matrix Market (.mtx) format
 
 Matrices used in the experiments:
- ____________________________________________________
-|Matrix file		       |Rows  |	Cols |	NNZ  |
-|______________________________|______|______|_______|
-|small_matrix.mtx	       |10k   | 10k  | 200k  |
-|small_medium_matrix.mtx       |14k   |	14k  | 400k  |
-|medium_matrix.mtx	       |20k   |	20k  | 800k  |
-|medium_large_matrix.mtx       |28k   |	28k  | 1.6M  |
-|2nd_small_matrix.mtx          |40k   |	40k  | 3.2M  |
-|2nd_small_medium_matrix.mtx   |57k   |	57k  | 6.4M  |
-|2nd_medium_matrix.mtx	       |80k   |	80k  | 12.8M |
-|2nd_medium_large_matrix.mtx   |116k  |	116k | 20M   |
-|large_matrix.mtx	       |130k  |	130k | 25M   |
-|strong_medium_large_matrix.mtx|50k   |	50k  | 1.58M |
-|strong_large_matrix.mtx       |100k  |	100k | 25M   |
+ ________________________________________________________
+|Matrix file		              |Rows  |	Cols |	NNZ |
+|_________________________________|______|______________|
+|small_matrix.mtx	              |10k   | 10k  | 200k  |
+|small_medium_matrix.mtx          |14k   |	14k  | 400k |
+|medium_matrix.mtx	              |20k   |	20k  | 800k |
+|medium_large_matrix.mtx   	      |28k   |	28k  | 1.6M |
+|2nd_small_matrix.mtx             |40k   |	40k  | 3.2M |
+|2nd_small_medium_matrix.mtx      |57k   |	57k  | 6.4M |
+|2nd_medium_matrix.mtx	          |80k   |	80k  | 12.8M|
+|2nd_medium_large_matrix.mtx      |116k  |	116k | 20M  |
+|large_matrix.mtx	       		  |130k  |	130k | 25M  |
+|strong_medium_large_matrix.mtx   |50k   |	50k  | 1.58M|
+|strong_large_matrix.mtx          |100k  |	100k | 25M  |
 
 Synthetic matrices were generated to support weak scaling up to 256 MPI processes.
 
@@ -98,20 +104,24 @@ The program prints:
 ⦁	Benchmark results are stored in CSV format, including:
 ⦁	Matrix,Processes,Rows,Cols,NNZ,Time(s),Speedup,Efficiency
 
+---
+
 5. Implemented Functionality
  ___________________________________________
-|Step  |Description			    |
+|Step  |Description			    			|
 |______|____________________________________|
-|1     |Rank 0 reads .mtx file		    |
+|1     |Rank 0 reads .mtx file		    	|
 |2     |Matrix converted from COO to CSR    |
-|3     |1D row-wise partitioning	    |
+|3     |1D row-wise partitioning	    	|
 |4     |Identification of ghost columns     |
 |5     |MPI communication of vector elements|
-|6     |Local SpMV on each rank		    |
-|7     |Timing via MPI_Wtime()		    |
+|6     |Local SpMV on each rank		    	|
+|7     |Timing via MPI_Wtime()		    	|
 |8     |Strong and weak scaling benchmarks  |
 |9     |Speedup and efficiency computation  |
-|10    |CSV output generation		    |
+|10    |CSV output generation		    	|
+
+---
 
 6. Parallel Design (Foster’s Methodology)
 
@@ -125,6 +135,8 @@ Exchange of ghost elements of the input vector.
 Local CSR matrices built per rank to reduce communication.
 4.	Mapping:
     MPI ranks mapped directly to compute processes.
+
+---
 
 7. Scaling Experiments
 
@@ -144,6 +156,8 @@ Constant workload per rank
 
 Goal: assess parallel efficiency at scale
 
+---
+
 8. Performance Metrics
 
 The following metrics are reported:
@@ -162,6 +176,8 @@ Estimated FLOPs:
 
 2×𝑁𝑁𝑍
 
+---
+
 9. Cluster Notes
 
 Modules required:
@@ -176,6 +192,8 @@ module load mpich-3.2.1--gcc-9.1.0
 ⦁	Walltime: configurable in PBS script
 
 ⦁	Max tested scale: 256 MPI processes
+
+---
 
 10. Notes
 
