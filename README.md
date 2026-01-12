@@ -1,7 +1,7 @@
 Sparse Matrix–Vector Multiplication with MPI (PARCO – Deliverable 2)\
 <ins>[made by Lorenzo Vadacca-256374]</ins>
 > [!NOTE]
-> All the files are zipped for dimension problems. Please download "Vadacca-256374-ParcoD2.7z".
+> All the files are zipped for dimension problems. Please download "Vadacca-256374-Parco(D2).7z".
 
 This project implements a distributed Sparse Matrix–Vector multiplication (SpMV) using the Compressed Sparse Row (CSR) format and MPI for parallelization.
 The work follows Foster’s methodology for parallel program design and includes strong and weak scaling experiments executed on an HPC cluster.
