@@ -25,25 +25,25 @@ Compilation flags:
 
 - std=c++11 → C++ standard compliance
 
-MPI compilation is handled via mpicxx or equivalent MPI wrappers.
+MPI compilation is handled via mpirun or equivalent MPI wrappers.
 
 ---
 ## 2. Project Structure
 
 Deliverable2/ \
 ├── matrices/      # Matrix Market (.mtx) input files \
- |	├── strong/ \
- |	├── weak/\
+| 	   ├── strong/ \
+|	    ├── weak/\
 ├── src/           # C++ source files \
- │	├── main.cpp \
- │	├── csr.cpp \
- │	├── spmv.cpp \
- │	├── partition.cpp \
- │	├── csr.h \
- │	├── spmv.h \
- │	└── partition.h \
+│	    ├── main.cpp \
+│	    ├── csr.cpp \
+│	    ├── spmv.cpp \
+│	    ├── partition.cpp \
+│	    ├── csr.h \
+│	    ├── spmv.h \
+│	    └── partition.h \
 ├── scripts/       # PBS scripts for cluster execution \
- │	└── run_spmv.pbs \
+│	    └── cluster.pbs \
 └── README.md \
 
 ---
@@ -127,7 +127,7 @@ The implementation follows Foster’s four steps:
 Rows distributed across MPI ranks (1D decomposition).
 2.	Communication:
 Exchange of ghost elements of the input vector.
-3.	Agglomeration:
+3.	Aggregation:
 Local CSR matrices built per rank to reduce communication.
 4.	Mapping:
     MPI ranks mapped directly to compute processes.
