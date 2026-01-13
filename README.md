@@ -1,4 +1,4 @@
-Sparse Matrix with MPI (PARCO – Deliverable 2)\
+Sparse Matrices with MPI (PARCO – Deliverable 2)\
 <ins>[made by Lorenzo Vadacca-256374]</ins>
 > [!NOTE]
 > All the files are zipped for dimension problems. Please download "Vadacca-256374-Parco(D2).7z".
