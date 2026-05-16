@@ -187,3 +187,7 @@ Synthetic matrices are used to reach large process counts.
 Results are reproducible due to fixed random seeds.
 
 The implementation prioritizes clarity and correctness over aggressive low-level optimizations.
+
+---
+
+Copyright(c)2026 Lorenzo Vadacca
