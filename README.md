@@ -171,3 +171,7 @@ Default values in code:
 ⦁	File names: ensure unique CSV/output file names to prevent overwriting previous results
 
 ⦁ 	The PBS script loops through all scheduling/threads/chunks automatically.
+
+---
+
+Copyright(c)2026 Lorenzo Vadacca
